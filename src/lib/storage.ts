@@ -3,8 +3,12 @@ import {
   StorageReadError,
   StorageValidationError,
   StorageWriteError,
-} from "./errors";
-import { type StorageKey, StorageSchema, type StorageValue } from "./schemas";
+} from "@/lib/errors";
+import {
+  type StorageKey,
+  StorageSchema,
+  type StorageValue,
+} from "@/lib/schemas";
 
 export async function readKey<K extends StorageKey>(
   key: K

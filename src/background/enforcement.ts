@@ -106,8 +106,12 @@ async function maybeRunScheduledCleanup() {
 
   try {
     await runCleanupWithConfig(cfg, now);
-  } catch {
-    // keep the alarm loop alive; the next tick can try again
+  } catch (err) {
+    console.error(
+      "[enforcement] runCleanupWithConfig failed during alarm tick",
+      { now, schedule: cfg.schedule, retention: cfg.retention },
+      err
+    );
   }
 }
 
@@ -115,7 +119,10 @@ async function runCleanupWithConfig(cfg: Cleanup, now = Date.now()) {
   await runCleanup(cfg.retention, cfg.whitelistExempt);
   const written = await writeKey("cleanup", { ...cfg, lastRunAt: now });
   if (Result.isError(written)) {
-    throw written.error;
+    console.error(
+      "[enforcement] failed to persist cleanup.lastRunAt",
+      written.error
+    );
   }
   return now;
 }

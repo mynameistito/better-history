@@ -1,10 +1,10 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Result } from "better-result";
 import { useEffect, useMemo, useState } from "react";
+import { ConfirmDeleteModal } from "@/features/cleanup/confirm-delete-modal";
 import { extensionMessaging } from "@/lib/messages";
 import { Cleanup, type Cleanup as CleanupConfig } from "@/lib/schemas";
 import { readKeyOr, writeKey } from "@/lib/storage";
-import { ConfirmDeleteModal } from "./confirm-delete-modal";
 
 const DEFAULT_CLEANUP = Cleanup.parse({});
 
@@ -307,8 +307,11 @@ export function CleanupForm() {
       <div className="flex flex-col gap-2 border-zinc-200 border-t pt-5 sm:flex-row sm:justify-end dark:border-zinc-800">
         <button
           className="rounded-lg border border-zinc-200 px-4 py-2 text-sm hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
-          disabled={isWorking}
+          disabled={isWorking || isDirty}
           onClick={() => setPendingAction("run-now")}
+          title={
+            isDirty ? "Save your changes before running cleanup." : undefined
+          }
           type="button"
         >
           Run now

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 interface ConfirmDeleteModalProps {
   body: string;
@@ -19,16 +19,50 @@ export function ConfirmDeleteModal({
 }: ConfirmDeleteModalProps) {
   const [value, setValue] = useState("");
   const canConfirm = value.trim().toLowerCase() === "delete" && !isBusy;
+  const titleId = useId();
+  const bodyId = useId();
+
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    if (canConfirm) {
+      onConfirm();
+    }
+  };
+
+  useEffect(() => {
+    const onDocKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && !isBusy) {
+        event.preventDefault();
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", onDocKeyDown);
+    return () => document.removeEventListener("keydown", onDocKeyDown);
+  }, [isBusy, onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-zinc-950/45 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950">
+    <div
+      aria-describedby={bodyId}
+      aria-labelledby={titleId}
+      aria-modal="true"
+      className="fixed inset-0 z-50 grid place-items-center bg-zinc-950/45 p-4 backdrop-blur-sm"
+      role="dialog"
+    >
+      <form
+        className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+        onSubmit={handleSubmit}
+      >
         <div className="space-y-2">
           <p className="font-semibold text-red-600 text-xs uppercase tracking-[0.24em]">
             Destructive cleanup
           </p>
-          <h2 className="font-semibold text-xl">{title}</h2>
-          <p className="text-sm text-zinc-600 leading-6 dark:text-zinc-400">
+          <h2 className="font-semibold text-xl" id={titleId}>
+            {title}
+          </h2>
+          <p
+            className="text-sm text-zinc-600 leading-6 dark:text-zinc-400"
+            id={bodyId}
+          >
             {body}
           </p>
         </div>
@@ -55,13 +89,12 @@ export function ConfirmDeleteModal({
           <button
             className="rounded-lg bg-red-600 px-3 py-2 text-sm text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50"
             disabled={!canConfirm}
-            onClick={onConfirm}
-            type="button"
+            type="submit"
           >
             {isBusy ? "Working…" : confirmLabel}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

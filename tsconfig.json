@@ -6,7 +6,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "types": ["bun"]
   },
-  "include": [".wxt/wxt.d.ts", "src/**/*", "wxt.config.ts"]
+  "include": [".wxt/wxt.d.ts", "src/**/*", "__tests__/**/*", "wxt.config.ts"]
 }

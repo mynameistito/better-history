@@ -75,8 +75,12 @@ export function defineExtensionMessaging<
         payload: RequestFor<TProtocol, TKey>,
         sender: Browser.runtime.MessageSender
       ) => Promise<ResponseFor<TProtocol, TKey>> | ResponseFor<TProtocol, TKey>
-    ) {
-      browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    ): () => void {
+      const listener = (
+        message: unknown,
+        sender: Browser.runtime.MessageSender,
+        sendResponse: (response: unknown) => void
+      ) => {
         if (!isMessageOfType(message, type)) {
           return;
         }
@@ -90,7 +94,9 @@ export function defineExtensionMessaging<
           );
 
         return true;
-      });
+      };
+      browser.runtime.onMessage.addListener(listener);
+      return () => browser.runtime.onMessage.removeListener(listener);
     },
   };
 }

@@ -1,4 +1,4 @@
-import type { DomainRule } from "./schemas";
+import type { DomainRule } from "@/lib/schemas";
 
 interface Parsed {
   host: string;

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { anyRuleMatches, ruleMatches, shouldDelete } from "./patterns";
-import type { DomainRule } from "./schemas";
+import { anyRuleMatches, ruleMatches, shouldDelete } from "@/lib/patterns";
+import type { DomainRule } from "@/lib/schemas";
 
 describe("ruleMatches: exact", () => {
   const rule: DomainRule = { kind: "exact", pattern: "example.com" };
