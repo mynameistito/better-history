@@ -45,6 +45,15 @@ function RootLayout() {
           >
             Whitelist
           </Link>
+          <Link
+            activeProps={{
+              className: "bg-zinc-100 font-medium dark:bg-zinc-800",
+            }}
+            className="rounded-md px-2 py-1.5 hover:bg-zinc-50 dark:hover:bg-zinc-900"
+            to="/settings/cleanup"
+          >
+            Cleanup
+          </Link>
         </nav>
       </aside>
       <main className="min-w-0 flex-1">

@@ -1,5 +1,6 @@
 import { Result } from "better-result";
 import { history } from "@/lib/browser-api";
+import { extensionMessaging } from "@/lib/messages";
 import { shouldDelete } from "@/lib/patterns";
 import { Cleanup, Settings } from "@/lib/schemas";
 import { readKeyOr, writeKey } from "@/lib/storage";
@@ -103,8 +104,56 @@ async function maybeRunScheduledCleanup() {
     return;
   }
 
+  try {
+    await runCleanupWithConfig(cfg, now);
+  } catch (err) {
+    console.error(
+      "[enforcement] runCleanupWithConfig failed during alarm tick",
+      { now, schedule: cfg.schedule, retention: cfg.retention },
+      err
+    );
+  }
+}
+
+async function runCleanupWithConfig(cfg: Cleanup, now = Date.now()) {
   await runCleanup(cfg.retention, cfg.whitelistExempt);
-  await writeKey("cleanup", { ...cfg, lastRunAt: now });
+  const written = await writeKey("cleanup", { ...cfg, lastRunAt: now });
+  if (Result.isError(written)) {
+    console.error(
+      "[enforcement] failed to persist cleanup.lastRunAt",
+      written.error
+    );
+    throw written.error;
+  }
+  return now;
+}
+
+export async function runConfiguredCleanup() {
+  const c = await readKeyOr("cleanup", Cleanup.parse({}));
+  if (Result.isError(c)) {
+    throw c.error;
+  }
+  const lastRunAt = await runCleanupWithConfig(c.value);
+  return { lastRunAt };
+}
+
+export async function runOnCloseCleanup() {
+  const c = await readKeyOr("cleanup", Cleanup.parse({}));
+  if (Result.isError(c)) {
+    return;
+  }
+  if (c.value.schedule !== "on-close") {
+    return;
+  }
+  try {
+    await runCleanupWithConfig(c.value);
+  } catch (err) {
+    console.error("[enforcement] runOnCloseCleanup failed", err);
+  }
+}
+
+export function registerCleanupMessages() {
+  extensionMessaging.onMessage("cleanup.runNow", () => runConfiguredCleanup());
 }
 
 export async function runCleanup(

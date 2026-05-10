@@ -3,7 +3,12 @@ import {
   rebuildContextMenus,
   registerContextMenuClicks,
 } from "@/background/context-menus";
-import { ensureAlarm, registerAlarmHandler } from "@/background/enforcement";
+import {
+  ensureAlarm,
+  registerAlarmHandler,
+  registerCleanupMessages,
+  runOnCloseCleanup,
+} from "@/background/enforcement";
 import { seedDefaults } from "@/background/install";
 
 export default defineBackground(() => {
@@ -16,6 +21,13 @@ export default defineBackground(() => {
   browser.runtime.onStartup.addListener(async () => {
     await ensureAlarm();
     await rebuildContextMenus();
+    await runOnCloseCleanup();
+  });
+
+  browser.runtime.onSuspend.addListener(() => {
+    runOnCloseCleanup().catch(() => {
+      // MV3 suspend work is best-effort; startup catchup will retry.
+    });
   });
 
   browser.storage.onChanged.addListener((changes, area) => {
@@ -27,6 +39,7 @@ export default defineBackground(() => {
   });
 
   registerAlarmHandler();
+  registerCleanupMessages();
   registerContextMenuClicks();
   registerToolbarAction();
 });

@@ -2,8 +2,8 @@ import { format } from "date-fns";
 import { Trash2 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { VList } from "virtua";
+import type { HistoryItem } from "@/features/history/use-history";
 import { cn } from "@/lib/cn";
-import type { HistoryItem } from "./use-history";
 
 interface Props {
   items: HistoryItem[];

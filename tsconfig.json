@@ -8,5 +8,5 @@
     "noImplicitOverride": true,
     "verbatimModuleSyntax": true
   },
-  "include": [".wxt/wxt.d.ts", "src/**/*", "wxt.config.ts"]
+  "include": [".wxt/wxt.d.ts", "src/**/*", "__tests__/**/*", "wxt.config.ts"]
 }
