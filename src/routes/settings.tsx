@@ -7,6 +7,7 @@ export const Route = createFileRoute("/settings")({
 const TABS = [
   { to: "/settings/blacklist", label: "Blacklist" },
   { to: "/settings/whitelist", label: "Whitelist" },
+  { to: "/settings/cleanup", label: "Cleanup" },
 ] as const;
 
 function SettingsLayout() {

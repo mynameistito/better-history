@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SettingsWhitelistRouteImport } from './routes/settings.whitelist'
+import { Route as SettingsCleanupRouteImport } from './routes/settings.cleanup'
 import { Route as SettingsBlacklistRouteImport } from './routes/settings.blacklist'
 
 const SettingsRoute = SettingsRouteImport.update({
@@ -29,6 +30,11 @@ const SettingsWhitelistRoute = SettingsWhitelistRouteImport.update({
   path: '/whitelist',
   getParentRoute: () => SettingsRoute,
 } as any)
+const SettingsCleanupRoute = SettingsCleanupRouteImport.update({
+  id: '/cleanup',
+  path: '/cleanup',
+  getParentRoute: () => SettingsRoute,
+} as any)
 const SettingsBlacklistRoute = SettingsBlacklistRouteImport.update({
   id: '/blacklist',
   path: '/blacklist',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/settings': typeof SettingsRouteWithChildren
   '/settings/blacklist': typeof SettingsBlacklistRoute
+  '/settings/cleanup': typeof SettingsCleanupRoute
   '/settings/whitelist': typeof SettingsWhitelistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/settings': typeof SettingsRouteWithChildren
   '/settings/blacklist': typeof SettingsBlacklistRoute
+  '/settings/cleanup': typeof SettingsCleanupRoute
   '/settings/whitelist': typeof SettingsWhitelistRoute
 }
 export interface FileRoutesById {
@@ -52,18 +60,30 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/settings': typeof SettingsRouteWithChildren
   '/settings/blacklist': typeof SettingsBlacklistRoute
+  '/settings/cleanup': typeof SettingsCleanupRoute
   '/settings/whitelist': typeof SettingsWhitelistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/settings' | '/settings/blacklist' | '/settings/whitelist'
+  fullPaths:
+    | '/'
+    | '/settings'
+    | '/settings/blacklist'
+    | '/settings/cleanup'
+    | '/settings/whitelist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/settings' | '/settings/blacklist' | '/settings/whitelist'
+  to:
+    | '/'
+    | '/settings'
+    | '/settings/blacklist'
+    | '/settings/cleanup'
+    | '/settings/whitelist'
   id:
     | '__root__'
     | '/'
     | '/settings'
     | '/settings/blacklist'
+    | '/settings/cleanup'
     | '/settings/whitelist'
   fileRoutesById: FileRoutesById
 }
@@ -95,6 +115,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsWhitelistRouteImport
       parentRoute: typeof SettingsRoute
     }
+    '/settings/cleanup': {
+      id: '/settings/cleanup'
+      path: '/cleanup'
+      fullPath: '/settings/cleanup'
+      preLoaderRoute: typeof SettingsCleanupRouteImport
+      parentRoute: typeof SettingsRoute
+    }
     '/settings/blacklist': {
       id: '/settings/blacklist'
       path: '/blacklist'
@@ -107,11 +134,13 @@ declare module '@tanstack/react-router' {
 
 interface SettingsRouteChildren {
   SettingsBlacklistRoute: typeof SettingsBlacklistRoute
+  SettingsCleanupRoute: typeof SettingsCleanupRoute
   SettingsWhitelistRoute: typeof SettingsWhitelistRoute
 }
 
 const SettingsRouteChildren: SettingsRouteChildren = {
   SettingsBlacklistRoute: SettingsBlacklistRoute,
+  SettingsCleanupRoute: SettingsCleanupRoute,
   SettingsWhitelistRoute: SettingsWhitelistRoute,
 }
 

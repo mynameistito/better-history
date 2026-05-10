@@ -8,14 +8,14 @@ Phases 1–5 done: scaffold, i18n + storage + better-result wrappers + pattern m
 
 UI for the scheduled cleanup that already runs in `src/background/enforcement.ts`.
 
-- [ ] `src/routes/settings.cleanup.tsx` — form bound to `cleanup` storage key
+- [x] `src/routes/settings.cleanup.tsx` — form bound to `cleanup` storage key
   - Schedule radio: never / on-close / daily / weekly / monthly
   - Retention radio: 1w / 2w / 1m / 3m
   - Whitelist exempt toggle
-- [ ] Confirmation modal — type "delete" to confirm, mirrors v7 UX
-- [ ] "Run now" button → call exported `runCleanup` from background via message bus
-- [ ] Background: handle `on-close` schedule via `runtime.onSuspend` (MV3 best-effort) + `runtime.onStartup` catchup
-- [ ] Add Cleanup tab to settings layout + sidebar link
+- [x] Confirmation modal — type "delete" to confirm, mirrors v7 UX
+- [x] "Run now" button → call exported `runCleanup` from background via message bus
+- [x] Background: handle `on-close` schedule via `runtime.onSuspend` (MV3 best-effort) + `runtime.onStartup` catchup
+- [x] Add Cleanup tab to settings layout + sidebar link
 
 **Files:** `src/routes/settings.cleanup.tsx`, `src/features/cleanup/cleanup-form.tsx`, `src/features/cleanup/confirm-delete-modal.tsx`, `src/lib/messages.ts` (typed `defineExtensionMessaging`)
 
