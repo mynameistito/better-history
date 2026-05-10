@@ -1,0 +1,33 @@
+src/background/enforcement.ts
+  s_27ef67587f6091::t_05fc0513d4f860 126
+  s_27ef67587f6091::t_c1e964d290a7d3 148-152
+tsconfig.json
+  s_27ef67587f6091::t_70ec1fedb6d23b 9
+src/lib/messages.ts
+  s_27ef67587f6091::t_f89e6b77a4d600 88-91
+src/features/cleanup/cleanup-form.tsx
+  s_27ef67587f6091::t_e1e5bfd85a55f0 221
+  s_27ef67587f6091::t_41dfa2b24fe7c9 255
+  s_27ef67587f6091::t_78aff548d6ed36 95,115,118,120-123
+  s_27ef67587f6091::t_4640e9eef2ea04 286
+  s_27ef67587f6091::t_96f16384e7b62f 146
+  s_27ef67587f6091::t_ce45492a4dfa12 3
+__tests__/patterns.test.ts
+  s_27ef67587f6091::t_ed5ddf951b823d 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "73b141cfface2c9077de6094ed7115810f3f0f28",
+  "prompts": {},
+  "sessions": {
+    "s_27ef67587f6091": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61c93a63-6034-478d-be21-88584aeda487",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    }
+  }
+}
