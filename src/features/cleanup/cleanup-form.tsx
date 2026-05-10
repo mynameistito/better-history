@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Result } from "better-result";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ConfirmDeleteModal } from "@/features/cleanup/confirm-delete-modal";
 import { extensionMessaging } from "@/lib/messages";
 import { Cleanup, type Cleanup as CleanupConfig } from "@/lib/schemas";
@@ -92,6 +92,7 @@ function optionClasses(isSelected: boolean) {
 export function CleanupForm() {
   const queryClient = useQueryClient();
   const [draft, setDraft] = useState<CleanupConfig>(DEFAULT_CLEANUP);
+  const [isDirty, setIsDirty] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(
     null
   );
@@ -111,16 +112,15 @@ export function CleanupForm() {
   });
 
   useEffect(() => {
-    if (query.data) {
+    if (query.data && !isDirty) {
       setDraft(query.data);
     }
-  }, [query.data]);
+  }, [query.data, isDirty]);
 
-  const isDirty = useMemo(
-    () =>
-      JSON.stringify(draft) !== JSON.stringify(query.data ?? DEFAULT_CLEANUP),
-    [draft, query.data]
-  );
+  const updateDraft = (updater: (current: CleanupConfig) => CleanupConfig) => {
+    setDraft(updater);
+    setIsDirty(true);
+  };
 
   const closeModal = () => {
     if (!isWorking) {
@@ -143,6 +143,7 @@ export function CleanupForm() {
         if (Result.isError(result)) {
           throw result.error;
         }
+        setIsDirty(false);
         await queryClient.invalidateQueries({ queryKey: ["cleanup"] });
         setStatus("Cleanup settings saved.");
       } else {
@@ -217,7 +218,7 @@ export function CleanupForm() {
                 className="sr-only"
                 name="cleanup-schedule"
                 onChange={() =>
-                  setDraft((current) => ({
+                  updateDraft((current) => ({
                     ...current,
                     schedule: option.value,
                   }))
@@ -251,7 +252,7 @@ export function CleanupForm() {
                 className="sr-only"
                 name="cleanup-retention"
                 onChange={() =>
-                  setDraft((current) => ({
+                  updateDraft((current) => ({
                     ...current,
                     retention: option.value,
                   }))
@@ -282,7 +283,7 @@ export function CleanupForm() {
             checked={draft.whitelistExempt}
             className="mt-1 size-5 accent-zinc-900 dark:accent-zinc-100"
             onChange={(event) =>
-              setDraft((current) => ({
+              updateDraft((current) => ({
                 ...current,
                 whitelistExempt: event.target.checked,
               }))

@@ -85,9 +85,10 @@ export function defineExtensionMessaging<
           return;
         }
 
-        Promise.resolve(
-          handler(message.payload as RequestFor<TProtocol, TKey>, sender)
-        )
+        Promise.resolve()
+          .then(() =>
+            handler(message.payload as RequestFor<TProtocol, TKey>, sender)
+          )
           .then((value) => sendResponse({ ok: true, value }))
           .catch((error: unknown) =>
             sendResponse({ error: messageError(error), ok: false })

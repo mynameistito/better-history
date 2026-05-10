@@ -123,6 +123,7 @@ async function runCleanupWithConfig(cfg: Cleanup, now = Date.now()) {
       "[enforcement] failed to persist cleanup.lastRunAt",
       written.error
     );
+    throw written.error;
   }
   return now;
 }
@@ -144,7 +145,11 @@ export async function runOnCloseCleanup() {
   if (c.value.schedule !== "on-close") {
     return;
   }
-  await runCleanupWithConfig(c.value);
+  try {
+    await runCleanupWithConfig(c.value);
+  } catch (err) {
+    console.error("[enforcement] runOnCloseCleanup failed", err);
+  }
 }
 
 export function registerCleanupMessages() {

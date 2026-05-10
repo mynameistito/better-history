@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { anyRuleMatches, ruleMatches, shouldDelete } from "@/lib/patterns";
 import type { DomainRule } from "@/lib/schemas";
