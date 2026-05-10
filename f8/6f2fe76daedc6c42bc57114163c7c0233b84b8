@@ -1,0 +1,41 @@
+src/lib/messages.ts
+  s_27ef67587f6091::t_e2bb4a81cdc5ad 78-83,97-99
+src/features/cleanup/confirm-delete-modal.tsx
+  s_27ef67587f6091::t_7342a891c39e81 22-23,44-45,47-54,59-65,92,97
+  s_27ef67587f6091::t_537467e3302eb5 25-31
+  s_27ef67587f6091::t_c26aab6fc68c8c 32-41
+  s_27ef67587f6091::t_3e2cc2c38ccb2c 1
+src/features/history/history-list.tsx
+  s_27ef67587f6091::t_974afe5c8df741 5
+src/lib/storage.ts
+  s_27ef67587f6091::t_04a4bc29c56376 6-11
+src/background/enforcement.ts
+  s_27ef67587f6091::t_c352ce8033e0c2 109-114,122-125
+src/lib/patterns.ts
+  s_27ef67587f6091::t_e1c969d94803f4 1
+src/features/cleanup/cleanup-form.tsx
+  s_27ef67587f6091::t_57ebde5d44e7c0 310,312-314
+src/lib/browser-api.ts
+  s_27ef67587f6091::t_389e69d553dc39 2
+tsconfig.json
+  s_27ef67587f6091::t_017c724e8d729c 12
+  s_27ef67587f6091::t_4b54b7aebde325 9-10
+package.json
+  s_27ef67587f6091::t_05a0e92265a694 17-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "f86f2fe76daedc6c42bc57114163c7c0233b84b8",
+  "prompts": {},
+  "sessions": {
+    "s_27ef67587f6091": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "61c93a63-6034-478d-be21-88584aeda487",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    }
+  }
+}
