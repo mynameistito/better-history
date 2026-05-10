@@ -15,7 +15,8 @@
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepare": "lefthook install",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node .github/setup.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
