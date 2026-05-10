@@ -1,0 +1,204 @@
+src/styles/globals.css
+  s_717ca17f9ca503::t_e130fc9d202461 1-10
+src/public/_locales/it/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/lib/storage.ts
+  s_717ca17f9ca503::t_a2f3405b6d8e8e 1-6,8-17,19-22,24-27,29-31,33-40,42-46,48-49,51,57,59-71,73-76
+  s_031997b7ae2f67::t_6fd8438f652e50 47,53-56
+src/entrypoints/popup/index.html
+  s_717ca17f9ca503::t_b1cceecd0550fd 1-3,6,8-13
+src/public/_locales/ru/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/fr/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/nl/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/entrypoints/background.ts
+  s_717ca17f9ca503::t_4380ff5db9fd88 1-8,10-13,15-22,26-31
+  s_031997b7ae2f67::t_9349705c866505 23-25
+  s_717ca17f9ca503::t_a1424d6f309c74 9,14,32
+src/lib/cn.ts
+  s_717ca17f9ca503::t_a42b4514dd6da5 2-6
+src/lib/patterns.ts
+  s_031997b7ae2f67::t_4defaafa01e337 3-5,7-11,17,30-32
+  s_717ca17f9ca503::t_95a0abd321bcd6 1-2,12-16,18-29,33-36,38-49,52-59,61-71,73-76,80-84,87-100,102-105
+  s_031997b7ae2f67::t_f12cdc9127c4da 51,60,72,77-79
+src/public/_locales/zh_CN/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+README.md
+  s_b95447367d4970::t_0b48a60fb76ab0 3-25,44-45,53-62,82
+  s_717ca17f9ca503::t_13ae702ab52bec 1,26-41,46-52,63-80
+src/features/history/history-list.tsx
+  s_717ca17f9ca503::t_702a3addb865ea 1-7,9-10,12-18,20,22-37,39-132
+  s_031997b7ae2f67::t_3b550a00411d00 8,11
+src/routes/settings.tsx
+  s_717ca17f9ca503::t_42ebae3780b0a4 1-35
+src/lib/schemas.ts
+  s_717ca17f9ca503::t_44bfa299e76976 1-80
+src/lib/patterns.test.ts
+  s_717ca17f9ca503::t_5909daa67b7442 1-104,106-116
+src/public/_locales/he/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/lib/ranges.ts
+  s_717ca17f9ca503::t_e20a14e2f41fbf 1-44,47-59
+  s_031997b7ae2f67::t_0cfab01a38e48a 45-46
+src/public/_locales/ko/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+LICENSE
+  s_b95447367d4970::t_658c786466819e 1-2,4-21
+src/public/_locales/tr/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/zh/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/pl/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/zh_TW/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/lib/errors.ts
+  s_717ca17f9ca503::t_cad1a7b1937760 1-13,15-34
+src/public/_locales/th/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/background/action.ts
+  s_717ca17f9ca503::t_c69822e9a43260 1-3,5-7,9-10
+  s_717ca17f9ca503::t_6acc5513901419 8
+src/public/_locales/es/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/zh_HK/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/features/domains/use-rules.ts
+  s_717ca17f9ca503::t_5a7b5ec3a1d7dc 1-15,17-25,27-30,32-35
+src/entrypoints/history/index.html
+  s_717ca17f9ca503::t_2f8086465c9b11 1-3,6,8-13
+src/routes/settings.whitelist.tsx
+  s_717ca17f9ca503::t_5cc232fcf49764 1,4-10,12-17
+  s_717ca17f9ca503::t_34a1a6675d81fe 2
+src/lib/browser-api.ts
+  s_717ca17f9ca503::t_a5f7d9371d2177 1-31,35-59,61,63-69,71,73-86,88,91-95,97-101
+  s_717ca17f9ca503::t_4c077a4b2f8f6b 32-34
+  s_031997b7ae2f67::t_0526d3fdb3591a 60,62,70,72
+src/entrypoints/popup/main.tsx
+  s_717ca17f9ca503::t_01e95df8a6e82d 1-4,11-12,20,22-25,32-33,35,37
+  s_031997b7ae2f67::t_54ef95e678cfcf 26-31
+  s_717ca17f9ca503::t_288fa01217c4d4 5-10,13-19,21,34,36
+src/public/_locales/en/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+biome.jsonc
+  s_031997b7ae2f67::t_76e14351cf4748 3,7-9
+  s_031997b7ae2f67::t_50574631e2ab16 4,6
+src/routeTree.gen.ts
+  s_717ca17f9ca503::t_3a5caeed81038b 1-11,16,50-51,56-58,60,68-69,74-75,116,121,126-128
+  s_717ca17f9ca503::t_876f0248cf2537 12,14-15,17-21,26-30,32-36,40-42,46-48,53-55,59,61-67,72,77-83,91-104,106-115,117-120,124
+  s_717ca17f9ca503::t_4d245d8ca7777e 13,22-25,31,37-39,43-45,49,52,70-71,73,76,84-90,105,122-123,125
+wxt.config.ts
+  s_717ca17f9ca503::t_8c6d542e6db67a 38-40
+  s_717ca17f9ca503::t_1162c278f6f6c8 1,4-7,10-37,41,43,45-48
+  s_717ca17f9ca503::t_1ab23bd280db4c 9
+  s_717ca17f9ca503::t_38cfbf8b96beae 3,44
+  s_717ca17f9ca503::t_11846af9a444f1 2
+  s_c6f39f95a34a38::t_3e2faad5c1ddea 8
+src/background/install.ts
+  s_717ca17f9ca503::t_6f295cf5e28c8c 1-32
+src/public/_locales/de/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+tsconfig.json
+  s_717ca17f9ca503::t_de3edb40946a77 2-11
+src/entrypoints/history/main.tsx
+  s_717ca17f9ca503::t_7c5b914826e0ca 9,12,14,35
+  s_717ca17f9ca503::t_16405ebc302db5 1-8,10-11,13,15-24,31-34,36
+  s_031997b7ae2f67::t_1124d903c0946b 25-30
+src/public/_locales/pt-PT/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/routes/index.tsx
+  s_031997b7ae2f67::t_0747273bf79592 21-38
+  s_031997b7ae2f67::t_06c6b8aaba9ecf 74
+  s_717ca17f9ca503::t_f521e0345eedc0 1-20,39-40,42-47,49-60,63,66,69-73,75-77
+  s_717ca17f9ca503::t_4ef51dbd1d7c0b 61-62,64-65,67-68
+  s_717ca17f9ca503::t_55874bed353541 41
+src/public/_locales/ar/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/routes/settings.blacklist.tsx
+  s_717ca17f9ca503::t_2db96dc08f53e4 1-10,12-17
+src/background/context-menus.ts
+  s_031997b7ae2f67::t_351fbaac412b12 64-100,107-112
+  s_717ca17f9ca503::t_04cabd9fbc67c5 1-12,17-21,23-53,55-57,59-63,101-106,113-116
+  s_031997b7ae2f67::t_534fabc1b2e00e 13-14
+  s_031997b7ae2f67::t_5c6a0f6291bcb0 58
+  s_717ca17f9ca503::t_8128f499cb442e 15-16
+.gitignore
+  s_b95447367d4970::t_9a43674b46ff90 1-39
+src/public/_locales/uk/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+TODO.md
+  s_717ca17f9ca503::t_b8aaa234383bba 1-180
+PRIVACY.md
+  s_717ca17f9ca503::t_9ec9a1e5501bc6 1-35
+src/routes/__root.tsx
+  s_717ca17f9ca503::t_23c4febec59e35 3-4,6
+  s_717ca17f9ca503::t_6d8c9f95a72693 27-47
+  s_717ca17f9ca503::t_c8f31322c2cb2d 1-2,5,7-26,48-55
+src/public/_locales/ja/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/pt-BR/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/features/domains/rules-editor.tsx
+  s_031997b7ae2f67::t_7800dcf634fc64 123
+  s_031997b7ae2f67::t_646bb55dd11761 137
+  s_031997b7ae2f67::t_087aee2a08849d 14,18,20-21,32-34,39-41,46,53-55
+  s_031997b7ae2f67::t_e9edb216908468 120
+  s_717ca17f9ca503::t_776e59e8c6e58b 1-13,15,19,22-28,30,35-38,42-45,47-48,50-52,56-119,121-122,124-136,138-148
+src/public/_locales/id/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+src/public/_locales/hin/messages.json
+  s_717ca17f9ca503::t_956681cae0b575 1-1247
+package.json
+  s_717ca17f9ca503::t_7b9a30a9cda7f5 20-32
+  s_717ca17f9ca503::t_b3f368c6762b27 3,5-14,33-46
+  s_717ca17f9ca503::t_7de98304ff21ce 4
+src/background/enforcement.ts
+  s_717ca17f9ca503::t_f58431ee650a25 1-18,20-29,31-46,51,53-56,58-59,61-64,66-82,84-86,88-92,103-113,119-124,126-134,136-138,140-143,145,148-152
+  s_031997b7ae2f67::t_450518ebd483fb 114-118
+  s_031997b7ae2f67::t_0ae93cea821b07 93-101
+src/features/history/use-history.ts
+  s_717ca17f9ca503::t_2a91a1f88d7451 1-5,7-11,13-20,22-24,26-41
+  s_031997b7ae2f67::t_d0bfd03bea8ef2 6,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "9a696770b8e979b7bccf90adb15f9e7d34b69cc0",
+  "prompts": {},
+  "sessions": {
+    "s_031997b7ae2f67": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8958d637-a76a-4539-91a9-ee37c0edc6a3",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    },
+    "s_717ca17f9ca503": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "285e2c19-03f2-45fc-8e16-223778dc5f2f",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    },
+    "s_b95447367d4970": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85cc3473-aa14-4d07-99a4-28253caa10a2",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    },
+    "s_c6f39f95a34a38": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "120d3a46-e236-459c-98b6-4d13091a8f1d",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Tito <github@mynameistito.com>"
+    }
+  }
+}
